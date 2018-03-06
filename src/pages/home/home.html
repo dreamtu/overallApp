@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar style="display: none;">
+    <button ion-button clear navPop></button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img src="assets/imgs/home.jpg" class="home-img"/>
+  <img src="assets/imgs/home1.png" class="home-img1"/>
+  <img src="assets/imgs/home2.png" class="home-img2"/>
+  <div class="home-style">
+    <ion-row>
+      <ion-col class="home-select" (tap)="city()">
+        <p>城市</p>
+      </ion-col>
+      <ion-col class="home-select" (tap)="enjoy()">
+        <p>畅游</p>
+      </ion-col>
+      <ion-col class="home-select" (tap)="tourist0()">
+        <p>景点</p>
+      </ion-col>
+      <ion-col class="home-select" (tap)="road()">
+        <p>线路</p>
+      </ion-col>
+
+    </ion-row>
+  </div>
+</ion-content>

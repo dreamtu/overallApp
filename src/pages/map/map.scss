@@ -1,0 +1,37 @@
+#container {width:100%; height: 82%; }
+.map-style{
+  position: fixed;
+  bottom: 0; left:0; right:0;
+  height: 18%;width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
+
+.map-cover{
+  position:absolute;left:0;bottom:0;background:#000;display:block;zoom:1;filter:alpha(opacity=40);opacity:0.4;
+  width:100%;height:120px;color:#fff;
+  text-align:center;
+}
+.map-cover div{
+  position: absolute;
+  right:2rem;
+  bottom:1.2rem;
+}
+.map-btn2{
+  float: right;
+  padding:6px;
+  border-radius: 5%;
+  opacity: 1!important;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.amap-marker {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  background-color: #488aff;
+  color:#ffffff;
+  border-radius:50%;padding:1px 0 0 2px;
+}

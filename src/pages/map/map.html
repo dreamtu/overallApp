@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar style="display: none;">
+    <button ion-button clear navPop></button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div id="container"></div>
+  <div id="touistId" style="display: none;"></div>
+  <div class="map-style">
+    <img src="assets/jingdianimg/aolinpike.jpg" />
+    <div class="map-cover">
+      <h3 id="tourist" padding-top>请点击您想去的景点</h3>
+      <button ion-button clear style="bottom:2.2rem;" (tap)="navigateByTitle()"><ion-icon name="navigate"></ion-icon>  导航前往</button>
+      <div (tap)="touristById()">
+        <button ion-button small class="map-btn2">查看详情     <ion-icon name="arrow-forward"></ion-icon></button>
+      </div>
+    </div>
+  </div>
+
+  <button navPop class="goback">
+    <ion-icon name="arrow-round-back"></ion-icon>
+  </button>
+</ion-content>

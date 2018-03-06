@@ -1,0 +1,112 @@
+.road-style{
+  text-align:center;
+  color:#ffffff;
+  background-image:url("../assets/imgs/road.jpg");
+  background-repeat:no-repeat;background-size:cover;
+  width:100%; height:220px;
+  padding-top:10rem;
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:999;
+}
+.road-style ion-row:nth-child(1){
+  margin:0 2rem;
+}
+.road-style ion-col{
+  margin:auto;
+  text-align:center;
+}
+
+.road-unselect ion-icon{
+  color:orange;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding-top:0.9rem;
+  background-color:#ffffff;
+  font-size:30px;
+}
+
+.road-select ion-icon{
+  color:#ffffff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding-top:0.8rem;
+  background-color:orange;
+  font-size:30px;
+}
+
+.road-style ion-row:nth-child(2){
+  background-color:#ffffff;
+  border-bottom:1px solid #c7c7c7;
+}
+/*三角形*/
+.triangle{
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-left: 12px solid orange;
+  border-bottom: 8px solid transparent;
+  margin:1.8rem 0.5rem 0 0;
+}
+
+.introduce-text{
+  margin:270px 1rem 0 1rem;
+  text-indent:2em;
+}
+
+
+.road-text{
+  margin:270px 0.5rem 0 0.5rem;
+}
+.road-text h3{
+  color: orange;
+}
+
+.map-text{
+  margin:270px 1rem 0 1rem;
+  color: orange;
+}
+.map-text button{
+  display: block;
+  margin: auto;
+  text-align: center;
+  color: #ffffff;
+}
+.map-text p{
+  text-indent: 2em;
+  color: #000;
+}
+
+.banner{
+  background-image:url("../assets/imgs/quanjing.jpg");
+  background-repeat:no-repeat;background-size:cover;height:15rem;width:100%;
+  position:relative;
+  margin:auto;text-align:center;
+}
+.banner-cover{
+  position:absolute;left:0px;bottom:0px;height:15rem;background:#000;display:block;zoom:1;filter:alpha(opacity=40);opacity:0.4;width:100%;color:#fff;
+  text-align:center;
+}
+.banner-cover h2{
+  margin:4.5rem auto 2rem;
+}
+.banner-cover button{
+  font-size:18px;
+  padding:8px;
+  border-radius: 10%;
+}
+
+.goback{
+  color:grey;
+  font-size:18px;
+  background-color:#fff;
+  width:3.5rem;height:3.5rem;
+  border-radius:50%;
+  box-shadow: -2px 0 5px grey,0 -2px 5px grey,0 2px 5px grey,2px 0 5px grey;
+  position: fixed;
+  left: 20px;
+  bottom: 60px;
+}
+

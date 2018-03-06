@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar style="display: none;">
+    <button ion-button clear navPop></button>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <div class="roaddetail-style">
+    <img [src]="road.coverImageUrl" />
+  </div>
+  <div class="roaddetail-text">
+    <h3><b>{{road.title}}</b></h3>
+    <p style="text-indent:2em;" [innerHtml]="road.content"></p>
+  </div>
+
+  <button navPop class="goback">
+    <ion-icon name="arrow-round-back"></ion-icon>
+  </button>
+</ion-content>

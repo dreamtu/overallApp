@@ -1,0 +1,45 @@
+.tourist0{
+  margin:0.5rem 0.3rem;
+}
+.jingdian{
+  position:relative;
+  margin:0 0 0.5rem 0;
+}
+.jingdian img{
+  width:100%;height:150px;
+  position:relative;margin:auto;display: block;
+  text-align:center;
+}
+
+.jingdian-cover{
+  position:absolute; top:0;bottom:0;height:150px;width:100%;
+  background:#000;display:block;
+  zoom:1;filter:alpha(opacity=40);opacity:0.4;color:#fff;
+  text-align:center;
+}
+.jingdian-cover h2{
+  margin:3rem 0 auto;
+  text-align:center;
+  opacity:1!important;color:#fff;
+}
+.jingdian-cover button{
+  float: right;margin-right: 1rem;
+  padding:6px;
+  border-radius: 5%;
+  opacity:1!important;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.goback{
+  color:grey;
+  font-size:18px;
+  background-color:#fff;
+  width:3.5rem;height:3.5rem;
+  border-radius:50%;
+  box-shadow: -2px 0 5px grey,0 -2px 5px grey,0 2px 5px grey,2px 0 5px grey;
+  position: fixed;
+  left: 20px;
+  bottom: 60px;
+}
+

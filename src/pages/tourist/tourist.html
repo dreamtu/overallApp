@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar style="display: none;">
+    <button ion-button clear navPop></button>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <div class="tourist-style">
+    <img [src]="Tourist.coverImageUrl" />
+    <div>
+      <h4>{{Tourist.title}}</h4>
+      <p style="margin-top:-0.5rem;"><ion-icon name="navigate"></ion-icon> {{Tourist.address?Tourist.address:'日照市'}}</p>
+    </div>
+  </div>
+  <div class="tourist-row">
+    <ion-row>
+      <ion-col style="border-right: 1px solid #d5d5d5;" *ngIf="isAndroid">
+        <a href="tel:{{Tourist.mobphone}}" *ngIf="Tourist.meituanUrl==null">
+          <ion-icon name="call"></ion-icon>
+          <p>立即订票</p>
+        </a>
+        <button (tap)="meituanByTit(Tourist.title,Tourist.meituanUrl)" *ngIf="Tourist.meituanUrl!=null">
+          <ion-icon name="call"></ion-icon>
+          <p>立即订票</p>
+        </button>
+      </ion-col>
+      <ion-col style="border-right: 1px solid #d5d5d5;" *ngIf="!isAndroid">
+        <a href="tel:{{Tourist.mobphone}}" *ngIf="Tourist.summary==null">
+          <ion-icon name="call"></ion-icon>
+          <p>立即订票</p>
+        </a>
+        <button (tap)="meituanByTit(Tourist.title,Tourist.summary)" *ngIf="Tourist.summary!=null">
+          <ion-icon name="call"></ion-icon>
+          <p>立即订票</p>
+        </button>
+      </ion-col>
+
+      <ion-col style="border-right: 1px solid #d5d5d5;" (tap)="navigateByTitle(Tourist.title,Tourist.href)">
+        <button>
+          <ion-icon name="navigate"></ion-icon>
+          <p>导航</p>
+        </button>
+      </ion-col>
+      <ion-col (tap)="overallByTit(Tourist.title,Tourist.overallUrl)">
+        <button>
+          <ion-icon name="compass"></ion-icon>
+          <p>看全景</p>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="tourist-text">
+    <p [innerHtml]="Tourist.content"></p>
+  </div>
+
+  <button navPop class="goback">
+    <ion-icon name="arrow-round-back"></ion-icon>
+  </button>
+</ion-content>

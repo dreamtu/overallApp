@@ -1,0 +1,118 @@
+.enjoy-style{
+  text-align:center;
+  color:#ffffff;
+  background-image:url("../assets/imgs/enjoy.jpg");
+  background-repeat:no-repeat;background-size:cover;
+  width:100%; height:220px;
+  padding-top:10rem;
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:999;
+}
+.enjoy-style ion-row:nth-child(1){
+  margin:0 0.2rem;
+}
+.enjoy-style ion-col{
+  margin:auto;
+  text-align:center;
+}
+
+.enjoy-unselect ion-icon{
+  color:orange;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding-top:0.9rem;
+  background-color:#ffffff;
+  font-size:30px;
+}
+
+.enjoy-select ion-icon{
+  color:#ffffff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding-top:0.8rem;
+  background-color:orange;
+  font-size:30px;
+}
+
+.enjoy-style ion-row:nth-child(2){
+  background-color:#ffffff;
+  border-bottom:1px solid #c7c7c7;
+}
+
+.food{
+  position:relative;
+  margin:0 0 0.5rem 0;
+}
+.food img{
+  width:100%;height:150px;
+  position:relative;margin:auto;display: block;
+  text-align:center;
+}
+
+.food-cover{
+  position:absolute; top:0;bottom:0;height:150px;width:100%;
+  background:#000;display:block;
+  zoom:1;filter:alpha(opacity=40);opacity:0.4;color:#fff;
+  text-align:center;
+}
+.food-cover h2{
+  margin:3rem auto;
+  text-align:center;
+  opacity:1!important;color:#fff;
+}
+.food-cover button{
+  float: right;margin-right: 1rem;
+  padding:6px;
+  border-radius: 5%;
+  opacity:1!important;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.swiper-wrapper ion-col{
+  margin-right:2rem;
+  font-size:16px;
+  top:1rem;
+}
+/*三角形*/
+.triangle{
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-left: 12px solid orange;
+  border-bottom: 8px solid transparent;
+  margin:1.8rem 0.5rem 0 0;
+}
+
+.enjoy-text{
+  margin:270px 1rem 0 1rem;
+  text-indent:2em;
+}
+
+.tese-text{
+  margin:270px 1rem 0 1rem;
+}
+
+.goback{
+  color:grey;
+  font-size:18px;
+  background-color:#fff;
+  width:3.5rem;height:3.5rem;
+  border-radius:50%;
+  box-shadow: -2px 0 5px grey,0 -2px 5px grey,0 2px 5px grey,2px 0 5px grey;
+  position: fixed;
+  left: 20px;
+  bottom: 60px;
+}
+
+.lvxingshe ion-row{
+  border-bottom: 1px #dedede solid;
+  border-left: 1px #dedede solid;
+}
+.lvxingshe ion-col:nth-child(1),.lvxingshe ion-col:nth-child(2),.lvxingshe ion-col:nth-child(3),
+.lvxingshe ion-col:nth-child(4),.lvxingshe ion-col:nth-child(5),.lvxingshe ion-col:nth-child(6){
+  border-right: 1px #dedede solid;
+}

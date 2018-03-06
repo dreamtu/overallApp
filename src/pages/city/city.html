@@ -1,0 +1,300 @@
+<ion-header>
+  <ion-toolbar style="display: none;">
+    <button ion-button clear navPop></button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="city-style">
+    <ion-row>
+      <ion-col class="{{cityFlg==1?'city-select':'city-unselect'}}" (tap)="citySelect(1)">
+        <ion-icon name="book" ></ion-icon>
+        <p>概况</p>
+      </ion-col>
+      <ion-col class="{{cityFlg==2?'city-select':'city-unselect'}}" (tap)="getGongjiao(2,'31')">
+        <ion-icon name="car"></ion-icon>
+        <p>交通</p>
+      </ion-col>
+      <ion-col class="{{cityFlg==3?'city-select':'city-unselect'}}" (tap)="citySelect(3)">
+        <ion-icon name="paper"></ion-icon>
+        <p>历史</p>
+      </ion-col>
+      <ion-col class="{{cityFlg==4?'city-select':'city-unselect'}}" (tap)="getBigmap(4,'255')">
+        <ion-icon name="map"></ion-icon>
+        <p>地图</p>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="cityFlg!=2&&cityFlg!=4">
+      <i class="triangle"></i>
+      <h4 *ngIf="cityFlg==1" style="color:#828282;">概况</h4>
+      <h4 *ngIf="cityFlg==2" style="display: none;">交通</h4>
+      <h4 *ngIf="cityFlg==3" style="color:#828282;">历史</h4>
+      <h4 *ngIf="cityFlg==4" style="color:#828282;">地图</h4>
+    </ion-row>
+  </div>
+  <!--概况-->
+  <div class="introduce-text" *ngIf="cityFlg==1">
+    <p>日照市位于山东省东南部黄海之滨，东经118 °25 ′～ 119°39′，北纬35°04′～36°04′。东临黄海，西接临沂市，南与江苏省连云港市毗邻， 北与青岛市、潍坊市接壤。南北长约 82 公里，东西宽约 90 公里，总面积 5358.57 平方公里。  </p>
+    <p>日照市属鲁东丘陵，总的地势背山面海， 中部高四周低，略向东南倾斜，山地、丘陵、平原相间分布。最高点为五莲县境内马耳山，海拔 706 米；最低点为东港区东海峪村，海拔1 ～ 1.5 米。山地占总面积的19.7%，丘陵占52.9%，平原占 19.9％，水域占7.5%。 </p>
+    <p>全市河流分属沭河水系、潍河水系和东南沿海水系，较大河流有沭河、傅疃河、潮白河、绣针河、潍河、巨峰河等。其中：沭河是日照市境内最大的河流，由沂水进入莒县境内，纵贯莒县南北， 境内干流长83.29 公里；傅疃河是日照市最大独流入海河道，境内干流长60.72 公里；潍河经莒县、五莲县入墙夼水库，境内干流长 47.5 公里；绣针河是省际边界河道，境内干流长度24.42 公里； 潮白河是日照市与青岛市边界河道，境内干流长 41.83 公里。  </p>
+    <p> 年末全市户籍总人口299.72万人，比上年末增加3.77万人。其中城镇居民人口139.77万人。户籍人口出生率16.53‰，人口死亡率4.54‰，人口自然增长率11.99‰。省内迁入5036人，省外迁入5895人。年末常住人口290.11万人，比上年末增加2.11万人。</p>
+    <p>经济增速继续回升。2016年，全市上下积极应对经济下行压力，国民经济运行稳中有进。初步核算并经省统计局审核反馈，全市实现地区生产总值（GDP）1802.49亿元，按可比价格计算，比上年增长8.1%，增速分别高于全国、全省1.4个和0.5个百分点，比上年提高0.6个百分点，列17市第二位。分季度看，第一季度增长7.7%，上半年增长7.6%，前三季度增长7.9%。分产业看，第一产业增加值146.97亿元，增长4.3%；第二产业增加值851.94亿元，增长8.0%；第三产业增加值803.58亿元，增长8.9%。人均地区生产总值62358元，增长7.5%。</p>
+    <div class="banner" (tap)="quanjing()">
+      <div class="banner-cover">
+        <h2>日照市全景展示</h2>
+        <button>查看全景</button>
+      </div>
+    </div>
+    <p>日照无天然湖泊，共有水库595座，总库容 13 亿立方米。其中：大型水库 3 座，分别是日照、青峰岭、小仕阳水库；中型水库 10 座，分别是马陵、巨峰、峤山、户部岭、长城岭、石亩子、学庄、河西、小王疃、龙潭沟水库。  </p>
+    <p>日照海岸位于黄海中部，岬湾相连，北起甜水河口，南到绣针河口，全长 168.5 公里，属于比较平直的基岩沙砾质海岸。海岸线上有石臼湾、佛手湾两大天然港湾与日照港、岚山港组成的日照港群。近陆岛屿有桃花岛、出风岛；远有平岛、达山岛和车牛山岛组成的“前三岛”，面积 0.42 平方公里。  </p>
+    <p>日照境内有大小山头 4358 座。西部为泰沂山脉系，大多呈东南、西北走向；北部山脉多呈南北和西南、东北走向；中南部有 7 条互不衔接的山脉，走向各异；东部属胶东丘陵。海拔 500 米以上的有 39 座。 </p>
+  </div>
+  <!--交通-->
+  <div  *ngIf="cityFlg==2">
+    <ion-toolbar class="jiaotong-text">
+      <ion-segment [(ngModel)]="pet">
+        <ion-segment-button value="飞机场">飞机场</ion-segment-button>
+        <ion-segment-button value="客车">客车</ion-segment-button>
+        <ion-segment-button value="火车">火车</ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+    <!--<ion-toolbar class="jiaotong-text" no-border-top>
+      <ion-segment [(ngModel)]="pet" class="traffic-style">
+        <ion-segment-button value="飞机场">飞机场</ion-segment-button>
+        <ion-segment-button value="客车">客车</ion-segment-button>
+        <ion-segment-button value="火车">火车</ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>-->
+
+    <div [ngSwitch]="pet">
+      <ion-list *ngSwitchCase="'飞机场'" text-center>
+        <p>日照机场2017-2018冬春航季航班时刻表</p>
+        <p>（2017.10.29-2018.3.24）</p>
+        <ion-grid class="feijichang">
+          <ion-row>
+            <ion-col style="border-right: none;background-color: #41b23b;">出港航班</ion-col>
+          </ion-row>
+          <ion-row style="background: #9fd68a;">
+            <ion-col>航程</ion-col>
+            <ion-col>航班号</ion-col>
+            <ion-col>起飞</ion-col>
+            <ion-col>到达</ion-col>
+            <ion-col>班期</ion-col>
+            <ion-col>机型</ion-col>
+          </ion-row>
+          <ion-row *ngFor="let item of feijiChugang">
+            <ion-col>{{item.name}}</ion-col>
+            <ion-col col-2>{{item.chuanzhen}}</ion-col>
+            <ion-col>{{item.telephone}}</ion-col>
+            <ion-col>{{item.mobphone}}</ion-col>
+            <ion-col>{{item.banqi}}</ion-col>
+            <ion-col>{{item.jixing}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col style="border-right: none;background-color: #41b23b;">进港航班</ion-col>
+          </ion-row>
+          <ion-row style="background: #9fd68a;">
+            <ion-col>航程</ion-col>
+            <ion-col>航班号</ion-col>
+            <ion-col>起飞</ion-col>
+            <ion-col>到达</ion-col>
+            <ion-col>班期</ion-col>
+            <ion-col>机型</ion-col>
+          </ion-row>
+          <ion-row *ngFor="let item of feijiJingang">
+            <ion-col>{{item.name}}</ion-col>
+            <ion-col col-2>{{item.chuanzhen}}</ion-col>
+            <ion-col>{{item.telephone}}</ion-col>
+            <ion-col>{{item.mobphone}}</ion-col>
+            <ion-col>{{item.banqi}}</ion-col>
+            <ion-col>{{item.jixing}}</ion-col>
+          </ion-row>
+          <p>机场巴士电话：0633-8331728</p>
+        </ion-grid>
+      </ion-list>
+      <ion-list *ngSwitchCase="'客车'" text-center>
+        <ion-grid class="feijichang">
+          <ion-row>
+            <ion-col style="border-right: none;background-color: #41b23b;">日照汽车站电话</ion-col>
+          </ion-row>
+          <ion-row style="background: #9fd68a;">
+            <ion-col>汽车站</ion-col>
+            <ion-col>地址</ion-col>
+            <ion-col>咨询电话</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>汽车东站</ion-col>
+            <ion-col>日照市黄海二路15号</ion-col>
+            <ion-col>0633-8334880</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>汽车总站</ion-col>
+            <ion-col>日照南路21号</ion-col>
+            <ion-col>0633-8221003</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>五莲汽车站</ion-col>
+            <ion-col>五莲县沿河路48号</ion-col>
+            <ion-col>0633-5213273</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>岚山汽车站</ion-col>
+            <ion-col>岚山圣岚路53号</ion-col>
+            <ion-col>0633-2881176</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>莒县汽车站</ion-col>
+            <ion-col>莒县文心西路002号</ion-col>
+            <ion-col>0633-6266351</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col style="border-right: none;background-color: #41b23b;">日照市途径旅游景点的公交路线表</ion-col>
+          </ion-row>
+          <ion-row style="background: #9fd68a;">
+            <ion-col>路别</ion-col>
+            <ion-col>起点、终点</ion-col>
+            <ion-col>间隔时间</ion-col>
+            <ion-col>首末班时间</ion-col>
+            <ion-col>途径主要景点</ion-col>
+          </ion-row>
+          <ion-row *ngFor="let item of gongjiao">
+            <ion-col>{{item.name}}</ion-col>
+            <ion-col>{{item.chuanzhen}}</ion-col>
+            <ion-col>{{item.banqi}}</ion-col>
+            <ion-col>{{item.address}}</ion-col>
+            <ion-col>{{item.jixing}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+      <ion-list *ngSwitchCase="'火车'" text-center>
+        <ion-grid class="feijichang">
+          <ion-row style="background: #9fd68a;">
+            <ion-col>车次</ion-col>
+            <ion-col>运行区段</ion-col>
+            <ion-col>终到日照时刻</ion-col>
+            <ion-col>日照开车时刻</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>K1449/1450</ion-col>
+            <ion-col>日照-牡丹江</ion-col>
+            <ion-col>6:48</ion-col>
+            <ion-col>12:51</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>2151/2</ion-col>
+            <ion-col>日照-郑州</ion-col>
+            <ion-col>7:32</ion-col>
+            <ion-col>19:20</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-3>K173/4</ion-col>
+            <ion-col>日照-上海</ion-col>
+            <ion-col>8:37</ion-col>
+            <ion-col>17:50</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>K51/2</ion-col>
+            <ion-col>日照-北京</ion-col>
+            <ion-col>11:11</ion-col>
+            <ion-col>17:05</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>K8281/2</ion-col>
+            <ion-col>日照-济南</ion-col>
+            <ion-col>13:04</ion-col>
+            <ion-col>13:56</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>K8285/6</ion-col>
+            <ion-col>日照-济南</ion-col>
+            <ion-col>14:55</ion-col>
+            <ion-col>9:37</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>K8287/8</ion-col>
+            <ion-col>日照-济南</ion-col>
+            <ion-col>21:29</ion-col>
+            <ion-col>5:01</ion-col>
+          </ion-row>
+          <ion-row style="border-bottom: 1px #dedede solid;">
+            <ion-col col-3>K633/4</ion-col>
+            <ion-col>日照-信阳</ion-col>
+            <ion-col>21:42</ion-col>
+            <ion-col>7:35</ion-col>
+          </ion-row>
+          <p>售票电话：0633-3966712</p>
+          <p>问询电话：95105175</p>
+        </ion-grid>
+      </ion-list>
+
+      <button navPop class="goback">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+    </div>
+  </div>
+  <!--历史-->
+  <div class="introduce-text" *ngIf="cityFlg==3">
+    <p>日照，周为莒地。</p>
+      <p>秦属琅琊郡。</p>
+    <p>西汉置海曲县。</p>
+    <p>三国魏时属城</p>
+    <p>阳郡并于莒县</p>
+    <p>北魏置梁乡县。</p>
+    <p>隋时归莒县，属琅琊郡。</p>
+    <p>唐、宋属密州。宋元佑二年（1087年）置日照镇，属莒县，日照之名始于此。金大定二十四年（1184年）始设日照县，属益都府莒州。</p>
+    <p>元明沿袭。清属沂州府。</p>
+    <p>中华民国建立后，民国二年（1913年）撤府，属胶东道。</p>
+    <p>民国十七年（1928年），撤道直属省政府。</p>
+    <p>民国二十九年（1940年）3月，日照县抗日民主政府成立，先后属滨海行署、滨海专署和三专署。</p>
+    <p>1950年，归属沂水专区。</p>
+    <p>1956年，归临沂专区。</p>
+    <p>1985年3月，撤县设市（县级）。</p>
+    <p>1989年6月，升格为地级市（直筒子市）。</p>
+    <p>1992年12月，设区带县，辖东港区、莒县、五莲县。</p>
+    <p>2004年9月，设立日照市岚山区。</p>
+  </div>
+  <!--地图-->
+  <div  *ngIf="cityFlg==4">
+    <ion-toolbar class="jiaotong-text">
+      <ion-segment [(ngModel)]="mapcity">
+        <ion-segment-button value="政区图">政区图</ion-segment-button>
+        <ion-segment-button value="码上日照">码上日照</ion-segment-button>
+        <ion-segment-button value="景点分布">景点分布</ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+
+    <div [ngSwitch]="mapcity">
+      <ion-scroll scrollX="true" scrollY="true" zoom="true" style="width: 100%; height: 500px" *ngSwitchCase="'政区图'">
+        <div style="width: 858px;height: 950px;">
+          <img [src]="bigmap.telephone" />
+        </div>
+      </ion-scroll>
+      <ion-scroll scrollX="true" scrollY="true" zoom="true" style="width: 100%; height: 500px" *ngSwitchCase="'码上日照'">
+        <div style="width: 2000px;height: 1409px;">
+          <img [src]="bigmap.mobphone" />
+        </div>
+      </ion-scroll>
+      <ion-scroll scrollX="true" scrollY="true" zoom="true" style="width: 100%; height: 500px" *ngSwitchCase="'景点分布'">
+        <div style="width: 1379px;height: 1063px;">
+          <img [src]="bigmap.chuanzhen" />
+        </div>
+      </ion-scroll>
+      <button navPop class="goback">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+    </div>
+  </div>
+  <!--<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>-->
+
+  <button navPop class="goback">
+    <ion-icon name="arrow-round-back"></ion-icon>
+  </button>
+</ion-content>
+
+
+

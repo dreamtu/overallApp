@@ -1,0 +1,113 @@
+.city-style{
+  text-align:center;
+  color:#ffffff;
+  background-image:url("../assets/imgs/city.jpg");
+  background-repeat:no-repeat;background-size:cover;
+  width:100%; height:220px;
+  padding-top:10rem;
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:999;
+}
+.city-style ion-row:nth-child(1){
+  margin:0 2rem;
+}
+.city-style ion-col{
+  margin:auto;
+  text-align:center;
+}
+
+.city-unselect ion-icon{
+  color:orange;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding-top:0.9rem;
+  background-color:#ffffff;
+  font-size:30px;
+}
+
+.city-select ion-icon{
+  color:#ffffff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding-top:0.8rem;
+  background-color:orange;
+  font-size:30px;
+}
+
+.city-style ion-row:nth-child(2){
+  background-color:#ffffff;
+  border-bottom:1px solid #c7c7c7;
+}
+/*三角形*/
+.triangle{
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-left: 12px solid orange;
+  border-bottom: 8px solid transparent;
+  margin:1.8rem 0.5rem 0 0;
+}
+
+.introduce-text{
+  margin:270px 1rem 0 1rem;
+  text-indent:2em;
+}
+
+.jiaotong-text{
+  margin:215px 1rem 0 1rem;
+  //text-indent:2em;
+}
+
+.banner{
+  position:relative;
+  margin:0 0 0.5rem 0;
+}
+.banner-cover{
+  background-image:url("../assets/imgs/quanjing.jpg");
+  background-repeat:no-repeat;background-size:cover;height:15rem;width:100%;
+  position:relative;
+  margin:auto;text-align:center;
+  zoom:1;filter:alpha(opacity=40);opacity:0.4;color:#fff;
+}
+.banner-cover h2{
+  margin:4.5rem auto 2rem;
+  opacity:1!important;color:#fff;
+}
+.banner-cover button{
+  border-radius: 5%;
+  opacity:1!important;
+}
+
+/*.traffic-style{
+  color: orange!important;
+
+}
+.traffic-style ion-segment-button{
+  text-align: center;
+  margin:0 auto;
+  display: flex;
+}*/
+
+.goback{
+  color:grey;
+  font-size:18px;
+  background-color:#fff;
+  width:3.5rem;height:3.5rem;
+  border-radius:50%;
+  box-shadow: -2px 0 5px grey,0 -2px 5px grey,0 2px 5px grey,2px 0 5px grey;
+  position: fixed;
+  left: 20px;
+  bottom: 60px;
+}
+
+.feijichang ion-row{
+  border-bottom: 1px #dedede solid;
+  border-left: 1px #dedede solid;
+}
+.feijichang ion-col:nth-child(1),.feijichang ion-col:nth-child(2),.feijichang ion-col:nth-child(3),
+.feijichang ion-col:nth-child(4),.feijichang ion-col:nth-child(5),.feijichang ion-col:nth-child(6){
+  border-right: 1px #dedede solid;
+}

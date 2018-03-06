@@ -1,0 +1,155 @@
+<ion-header>
+  <ion-toolbar style="display: none;">
+    <button ion-button clear navPop></button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="road-style">
+    <ion-row>
+      <ion-col class="{{roadFlg==1?'road-select':'road-unselect'}}" (tap)="roadSelect(1)">
+        <ion-icon class="Ionicons icon-hongqi"></ion-icon>
+        <p>红色之旅</p>
+      </ion-col>
+      <ion-col class="{{roadFlg==2?'road-select':'road-unselect'}}" (tap)="roadSelect(2)">
+        <ion-icon class="Ionicons icon-wenhua"></ion-icon>
+        <p>文化之旅</p>
+      </ion-col>
+      <ion-col class="{{roadFlg==3?'road-select':'road-unselect'}}" (tap)="roadSelect(3)">
+        <ion-icon class="Ionicons icon-dujia"></ion-icon>
+        <p>度假之旅</p>
+      </ion-col>
+      <ion-col class="{{roadFlg==4?'road-select':'road-unselect'}}" (tap)="roadSelect(4)">
+        <ion-icon name="map"></ion-icon>
+        <p>查看地图</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <i class="triangle"></i>
+      <h4 *ngIf="roadFlg==1" style="color:#828282;">红色之旅</h4>
+      <h4 *ngIf="roadFlg==2" style="color:#828282;">文化之旅</h4>
+      <h4 *ngIf="roadFlg==3" style="color:#828282;">度假之旅</h4>
+      <h4 *ngIf="roadFlg==4" style="color:#828282;">查看地图</h4>
+    </ion-row>
+  </div>
+  <!--红色之旅-->
+  <div class="road-text" *ngIf="roadFlg==1">
+    <ion-list>
+      <ion-item *ngFor="let item of roadList" (tap)="roadDetail(item.id)">
+        <ion-thumbnail item-start>
+          <img [src]="item.cover_image_url" />
+        </ion-thumbnail>
+        <h3 text-wrap>{{item.title}}</h3>
+      </ion-item>
+    </ion-list>
+  </div>
+  <!--文化之旅-->
+  <div class="road-text" *ngIf="roadFlg==2">
+    <ion-list>
+      <ion-item (tap)="tuniu(6)">
+        <ion-thumbnail item-start>
+          <img src="https://m.tuniucdn.com/fb2/t1/G2/M00/18/DE/Cii-TFeausyIILmuAANcR2PDLoYAAAkPgNcjGUAA1xf957_w600_h0_c0_t0.jpg">
+        </ion-thumbnail>
+        <h3 text-wrap>全家2k元十一国庆节避开人海，穷游山东日照</h3>
+      </ion-item>
+      <ion-item (tap)="tuniu(3)">
+        <ion-thumbnail item-start>
+          <img src="https://m.tuniucdn.com/fb2/t1/G1/M00/BD/C5/Cii9EFc1QfWIe6idAAgnzmKRZBIAAFfJgNgN_EACCfm048_w600_h0_c0_t0.jpg">
+        </ion-thumbnail>
+        <h3 text-wrap>日照万平口海滨撒个欢 2日经典游</h3>
+      </ion-item>
+      <ion-item (tap)="tuniu(4)">
+        <ion-thumbnail item-start>
+          <img src="https://m.tuniucdn.com/fb2/t1/G1/M00/BD/C7/Cii9EFc1QnqIGkdpAAm0_kQyZr4AAFfKQEciAoACbUW426_w600_h0_c0_t0.jpg">
+        </ion-thumbnail>
+        <h3 text-wrap>日照森林公园度个假 3日亲子游</h3>
+      </ion-item>
+      <ion-item (tap)="tuniu(5)">
+        <ion-thumbnail item-start>
+          <img src="https://m.tuniucdn.com/fb2/t1/G4/M00/DC/28/Cii_J1oNldiIK3d2ADionOFR8GIAADXeQEXoq8AOKi091_w600_h0_c0_t0.jpeg">
+        </ion-thumbnail>
+        <h3 text-wrap>【名山游】探索五莲山的佛教宏光和沂山的镇山威严</h3>
+      </ion-item>
+      <ion-item (tap)="tuniu(1)">
+        <ion-thumbnail item-start>
+          <img src="https://m.tuniucdn.com/fb2/t1/G3/M00/40/84/Cii_Nllp3taIAh2ZAASBZUFrPzAAADyBQAgxtsABIF9252_w600_h0_c0_t0.jpg">
+        </ion-thumbnail>
+        <h3 text-wrap>3天2晚，日照海边周末新玩法</h3>
+      </ion-item>
+      <ion-item (tap)="tuniu(2)">
+        <ion-thumbnail item-start>
+          <img src="https://m.tuniucdn.com/fb2/t1/G2/M00/F9/AD/Cii-TFk5TQeIF4kRAALUKE6Bsw8AALl0AIJRiwAAtRA652_w600_h0_c0_t0.JPG">
+        </ion-thumbnail>
+        <h3 text-wrap>【日照】【周边游】2天1晚，到日照海滨去赶海</h3>
+      </ion-item>
+    </ion-list>
+  </div>
+  <!--度假之旅-->
+  <div class="road-text" *ngIf="roadFlg==3">
+    <ion-list>
+      <ion-item (tap)="tuniu(1)">
+        <ion-thumbnail item-start>
+          <img src="https://m.tuniucdn.com/fb2/t1/G3/M00/40/84/Cii_Nllp3taIAh2ZAASBZUFrPzAAADyBQAgxtsABIF9252_w600_h0_c0_t0.jpg">
+        </ion-thumbnail>
+        <h3 text-wrap>3天2晚，日照海边周末新玩法</h3>
+      </ion-item>
+      <ion-item (tap)="tuniu(2)">
+        <ion-thumbnail item-start>
+          <img src="https://m.tuniucdn.com/fb2/t1/G2/M00/F9/AD/Cii-TFk5TQeIF4kRAALUKE6Bsw8AALl0AIJRiwAAtRA652_w600_h0_c0_t0.JPG">
+        </ion-thumbnail>
+        <h3 text-wrap>【日照】【周边游】2天1晚，到日照海滨去赶海</h3>
+      </ion-item>
+      <ion-item (tap)="tuniu(3)">
+        <ion-thumbnail item-start>
+          <img src="https://m.tuniucdn.com/fb2/t1/G1/M00/BD/C5/Cii9EFc1QfWIe6idAAgnzmKRZBIAAFfJgNgN_EACCfm048_w600_h0_c0_t0.jpg">
+        </ion-thumbnail>
+        <h3 text-wrap>日照万平口海滨撒个欢 2日经典游</h3>
+      </ion-item>
+      <ion-item (tap)="tuniu(4)">
+        <ion-thumbnail item-start>
+          <img src="https://m.tuniucdn.com/fb2/t1/G1/M00/BD/C7/Cii9EFc1QnqIGkdpAAm0_kQyZr4AAFfKQEciAoACbUW426_w600_h0_c0_t0.jpg">
+        </ion-thumbnail>
+        <h3 text-wrap>日照森林公园度个假 3日亲子游</h3>
+      </ion-item>
+      <ion-item (tap)="tuniu(5)">
+        <ion-thumbnail item-start>
+          <img src="https://m.tuniucdn.com/fb2/t1/G4/M00/DC/28/Cii_J1oNldiIK3d2ADionOFR8GIAADXeQEXoq8AOKi091_w600_h0_c0_t0.jpeg">
+        </ion-thumbnail>
+        <h3 text-wrap>【名山游】探索五莲山的佛教宏光和沂山的镇山威严</h3>
+      </ion-item>
+      <ion-item (tap)="tuniu(6)">
+        <ion-thumbnail item-start>
+          <img src="https://m.tuniucdn.com/fb2/t1/G2/M00/18/DE/Cii-TFeausyIILmuAANcR2PDLoYAAAkPgNcjGUAA1xf957_w600_h0_c0_t0.jpg">
+        </ion-thumbnail>
+        <h3 text-wrap>全家2k元十一国庆节避开人海，穷游山东日照</h3>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngIf="roadFlg==4" class="map-text">
+    <h5>日照主要景点： </h5>
+    <p>奥林匹克水上公园  浮来山 沁园春   河山</p>
+    <p>日照海滨国家森林公园    莒州文街  沭河湿地公园</p>
+    <p>龙门崮 驻龙山 刘家湾赶海园 浮蓬山庄</p>
+    <p>丽正园 五莲山  大青山  杏石温泉度假村</p>
+    <p>白鹭湾艺游小镇    欣彗休闲娱乐园  御海湾茶博园</p>
+    <p>万宝海滨风景区  翰林春有机茶博园  五征•松月湖</p>
+    <p>五蔬园  黑虎山狩猎场  浮来青   马鬐山</p>
+    <p>多岛海  顺风阳光海洋牧场    芦家河莲生湖游钓园</p>
+    <p>花仙子  竹洞天 泉山云顶 祥路碧海生态茶园</p>
+    <button ion-button color="orange" (tap)="goMap()">点击查看地图</button>
+    <p></p>
+  </div>
+
+  <!--<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>-->
+
+  <button navPop class="goback">
+    <ion-icon name="arrow-round-back"></ion-icon>
+  </button>
+</ion-content>
+
+
+

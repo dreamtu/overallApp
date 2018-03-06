@@ -1,0 +1,147 @@
+<ion-header>
+  <ion-toolbar style="display: none;">
+    <button ion-button clear navPop></button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="enjoy-style ">
+    <ion-row>
+      <ion-col class="{{enjoyFlg==1?'enjoy-select':'enjoy-unselect'}}" (tap)="enjoySelect(1)">
+        <ion-icon class="Ionicons icon-gailan"></ion-icon>
+        <p>概览</p>
+      </ion-col>
+      <ion-col class="{{enjoyFlg==2?'enjoy-select':'enjoy-unselect'}}" (tap)="getFoodList(2)">
+        <ion-icon class="Ionicons icon-meishi"></ion-icon>
+        <p>美食</p>
+      </ion-col>
+      <ion-col class="{{enjoyFlg==3?'enjoy-select':'enjoy-unselect'}}" (tap)="getJiudian(3,'41')">
+        <ion-icon class="Ionicons icon-jiudian"></ion-icon>
+        <p>酒店</p>
+      </ion-col>
+      <ion-col class="{{enjoyFlg==4?'enjoy-select':'enjoy-unselect'}}" (tap)="getLvxingshe(4,'11')">
+        <ion-icon class="Ionicons icon-lvhangshe"></ion-icon>
+        <p>旅行社</p>
+      </ion-col>
+      <ion-col class="{{enjoyFlg==5?'enjoy-select':'enjoy-unselect'}}" (tap)="getTeseList(5)">
+        <ion-icon class="Ionicons icon-shangpin"></ion-icon>
+        <p>特色商品</p>
+      </ion-col>
+    </ion-row>
+    <!--<div class="pageMenuSlides"><div class="swiper-container">
+      <div class="swiper-wrapper" >
+        <div class=" {{enjoyFlg==1?'enjoy-select':'enjoy-unselect'}}" (tap)="enjoySelect(1)" >
+          <ion-col>
+            <ion-icon class="Ionicons icon-gailan"></ion-icon>
+            <p>概览</p>
+          </ion-col>
+        </div>&lt;!&ndash;swiper-slide&ndash;&gt;
+        <div class=" {{enjoyFlg==2?'enjoy-select':'enjoy-unselect'}}" (tap)="enjoySelect(2)">
+          <ion-col>
+            <ion-icon class="Ionicons icon-meishi"></ion-icon>
+            <p>美食</p>
+          </ion-col>
+        </div>
+      </div>
+    </div>-->
+    <ion-row>
+      <i class="triangle"></i>
+      <h4 *ngIf="enjoyFlg==1" style="color:#828282;">概览</h4>
+      <h4 *ngIf="enjoyFlg==2" style="color:#828282;">美食</h4>
+      <h4 *ngIf="enjoyFlg==3" style="color:#828282;">酒店</h4>
+      <h4 *ngIf="enjoyFlg==4" style="color:#828282;">旅行社</h4>
+      <h4 *ngIf="enjoyFlg==5" style="color:#828282;">特色商品</h4>
+    </ion-row>
+  </div>
+
+  <!--概览-->
+  <div class="enjoy-text" *ngIf="enjoyFlg==1">
+    <p>日照，因“日出初光先照”而得名，因“蓝天、碧海、金沙滩”而享誉。总面积5359平方公里，总人口294万。2016年接待境内外游客4081.82万人次，增长8.75%。其中国内游客4053.55万人次，增长8.75%；入境游客28.27万人次，增长4.63%。全年实现旅游消费总额313.87亿元，增长13.75%，其中国内旅游收入299.62亿元，增长13.81%；旅游外汇收入12400万美元，增长4.71%。其中A级景区41家（4A级景区7家、3A级景区25家、2A级景区9家）。星级酒店达到27家，其中四星级酒店5家（雅禾国际大酒店、凌海大酒店、碧波大酒店、天成大酒店、华美大酒店），三星级酒店20家，二星级酒店2家。三星级旅游餐馆7家。旅行社144家，其中4A级旅行社4家（碧波国际旅行社、平安国际旅行社、凯莱国际旅行社、中亚国际旅行社），3A级旅行社13家。截止2016年底，全市持证导游员达到2787人。山东省旅游商品研发基地12家，金牌购物商店10个。省级旅游强乡镇21个，省级旅游特色村54个，省级农业旅游示范点37个，省休闲农业与乡村旅游示范点7个，省级工业旅游示范点6个，省级精品采摘园63个。目前，发展乡村旅游民俗村30个，近8万余张床位，已成为全国最大的民俗旅游接待基地。</p>
+    <p>作为山东半岛“仙境海岸”四个主体城市之一，日照拥有海岸线168.5公里，其中优质金沙滩64公里，资源优势得天独厚。近年来，市委、市政府高度重视旅游产业发展，把发展旅游业作为稳增长、调结构、惠民生的新支点，把旅游业与城市同步规划、同步建设、同步发展，着力构建旅游业发展新格局。2016年是“十三五”开局之年，市委、市政府审时度势，明确提出要把旅游业发展摆到和工业发展同等重要的地位，大力实施“旅游富市”战略。2月29日专门召开了全市旅游产业发展大会，出台了《关于促进旅游业改革发展的意见》及相关政策，明确了今后一个时期全市旅游业发展的总体思路、重点措施和目标任务，充分彰显了市委、市政府对旅游业发展的高度重视和坚定决心。 </p>
+    <p>十三五”期间，日照旅游业改革发展的总体思路是以“好客山东”、“仙境海岸”品牌为引领，以创建“国家全域旅游示范区”为抓手，抢抓“一带一路”国家战略和航空、高铁时代来临机遇，大力实施“旅游富市”战略，坚持规划先行，强化项目带动，突出改革创新，着力转型升级，聚力滨海资源开发、山岳景区打造、乡村旅游提档“三项重点”，强化旅游环境优化、旅游市场开拓、旅游发展政策保障“三项举措”，推动旅游资源向统筹整合、集约开发转变，旅游产品向休闲度假、文化体验、会展商务、养生养老转变，旅游服务向规范化、精细化、个性化转变，加快构建海山联动、城乡互动、多业融合、全域发展的大旅游格局。发展理念是坚持旅游空间全域化、旅游产业融合化、旅游产品品牌化、旅游设施标准化、旅游服务精细化、旅游环境友好化，牢固树立“全域旅游”发展理念，推动旅游城市向城市旅游转变，以城促旅，以旅兴城，实现城旅一体化发展。目标任务是到2020年，全市旅游业实现“三个显著提升”：一是旅游综合实力显著提升，旅游消费总额达到450亿元，年均旅游消费增幅达11%以上，旅游就业人数达到20万人以上。二是旅游产业实力显著提升，建成5个年接待游客100万人次以上的景区，重点培育5个年经营收入过亿元的旅游龙头企业。三是旅游品牌形象显著提升，创建2个国家5A级旅游景区、1个国家级旅游度假区、2个省级旅游度假区，旅游品牌形象更加鲜明，将日照打造成为海洋休闲度假名城、东方太阳文化圣地和丝绸之路文化旅游东方起点。 </p>
+    <p>日照是一座底蕴深厚、富有内涵的灵秀城市。这里是“龙山文化”的重要发祥地，现已发现陵阳河、两城、尧王城、丹土、东海峪等“龙山文化”遗址近百处。牛津大学出版的《世界史便览》称，公元前3500年到公元前2000年的日照两城是亚洲最早的城市。莒县陵阳河遗址发掘的原始陶文比甲骨文早1000多年，为我国文字之始祖。春秋时期的莒文化与齐文化、鲁文化并称“山东三大文化”。 这里的农民画享誉中外，是国家文化部首批命名的中国现代民间绘画之乡，与上海金山、陕西户县并称“中国三大农民画乡”。这里有近4000年树龄的“天下第一银杏树”，有被大文豪苏东坡赞誉为“奇秀不减雁荡”的佛教圣地五莲山。这里历史悠久，人杰地灵，是西周时期伟大军事家和政治家姜子牙、南北朝时期杰出文学评论家刘勰、中共一大代表王烬美、当代著名物理学家诺贝尔奖获得者丁肇中、原中央政治局常委宋平等名人志士的故乡。这里建有规模宏大的日照大学城，省内外7所知名大学先后搬迁至此，进一步地提升了这座年轻城市的文化品位。 </p>
+    <p>日照是一座朝气蓬勃、享誉四方的“水上运动之都”。这里有“亚洲第一、世界领先”的水上运动基地，先后成功举办了全国帆船锦标赛、全国沙滩排球巡回赛、国际帆船世界锦标赛和世界帆板精英赛、历届中国水上运动会等多项国内、国际重大体育赛事，第29届奥运会帆船帆板热身赛和第11届全运会6等个比赛项目也都在这里举行。水上运动已成为日照对外形象的鲜明标志。</p>
+    <p>日照是一座交通便捷、迅速崛起的港口城市。这里港口优势突出，是理想的深水良港，拥有日照、岚山两个国家一类对外开放大港，岚山港拥有中国北方最大的液体化工码头，日照港是中国第二大煤炭输出港。这里区位、交通优势明显，是新亚欧大陆桥东方桥头堡，是中国重点开发的沿海主轴线——日照至西安沿桥经济带的交汇点，是鲁南地区唯一的出海口和中国中西部地区的重要出海口，拥有菏日、胶新、坪岚三条铁路和日兰、沈海两条高速公路，海陆交通四通八达，素有“两港通四海、一线系亚欧”之美誉。特别是随着日照机场的建成、航线的开通，日照陆海空立体交通格局将更加完善。未来三年，日照还将迎来高铁时代。青日连城际铁路2017年底开通，济青高铁2018年开通，鲁南快速铁路客运通道，临沂、菏泽至郑州的高铁已开工，2018年开通，京沪高铁(二线走莒县)已列入“十三五”规划。将来日照至北京、上海、郑州、西安，再往西可达兰州，都是2.5—5.5个小时抵达，日照旅游客源市场将从目前的600—800公里半径快速扩大到1700公里以上。</p>
+    <p>日照是资源丰富、独具魅力的中国优秀旅游目的地。日照旅游资源丰富，“海、山、古、林、泉”兼备，旅游资源得天独厚。“海”有6000平方公里海域波澜壮阔，有64公里优质沙滩绵延细软，有33座岛礁星罗棋布，有3亿吨大港世界驰名。“山”有“奇秀不减雁荡”的五莲山，有植有“天下第一银杏树”的浮来山，有“江北第一野生杜鹃花园”的九仙山。“古”有两城遗址、陵阳河遗址、丹土遗址、东海峪遗址等历史遗存，有早于甲骨文1000多年的原始陶文，有5000年悠久历史的日照黑陶，有太阳文化、莒文化、东夷文化等优秀历史文化。“林”有江北最大的优质绿茶基地，有国家海滨森林公园。“泉”有管帅温泉、山海天地热温泉。</p>
+    <p>日照旅游以观光为基础，以休闲度假为重点，以特色旅游为补充，形成了以蓝天、碧海、金沙滩为代表的融自然、山水和人文资源为一体的系列旅游度假产品。近年来，日照以打造“国际滨海休闲名城、东方太阳文化圣地、中国民俗风情之乡”为目标，高起点规划发展旅游产业，着力提高旅游接待能力和服务水平，全面加强旅游基础设施和旅游环境建设，精心打造日照特色旅游品牌，努力实现人与自然和谐共处、经济与社会协调发展的新突破。</p>
+    <p>日照旅游产品日益丰富。“十二五”期间，梦幻海滩公园、阳光海岸山海天段、岚山多岛海等项目相继建成，构筑了日照滨海休闲度假旅游胜地；岚桥锦江大酒店、莒国大饭店、凯德购物广场相继营业，提升了旅游接待服务能力和水平。淡季旅游项目实现新突破，杏石温泉度假村成为全市首家温泉度假村；五莲县黑虎山狩猎场成为华东地区第一个现代化狩猎场；五莲山、浮来青、沁园春等3个滑雪场先后运营。以及杏石温泉度假村、黑虎山狩猎场、冬季采摘项目、大青山国际太极拳培训基地、五莲县五蔬园、龙门崮春节文化庙会等旅游项目和活动，极大地改变了淡季旅游产品单一的局面，形成了登山、泡泉、滑雪、狩猎、打拳、乡村采摘、民俗庙会等丰富的冬季旅游系列产品。</p>
+    <p>“十三五”期间，日照旅游将牢固树立“抓项目就是抓发展，抓大项目就是抓大发展”的意识，把项目建设摆在推动旅游业发展的首要位置，按照储备一批、引进一批、新开工一批、建成一批、改造一批、整合一批的流动发展模式，重点从强化规划引领、加大旅游项目招引和市场主体培育等方面加强旅游项目建设，切实打造一批有影响力和震撼力的旅游产品，提升日照旅游业核心竞争力。目前，确定了一批带动力强、发展潜力大的高端优质项目，通过项目建设带动旅游业整体水平提升。其中新上海洋馆、四季花鸟园、激光秀、尚城旅游小镇、渔人码头等30多个滨海旅游项目；改造提升天台山、五莲山、浮来山、大青山、龙门崮、河山、驻龙山、卧龙山等10个山岳旅游项目；推进莲山人家、绿茶文化长廊等4个乡村旅游片区和花仙子风俗小镇、白鹭湾大地艺术村、嗡嗡乐园、农乐园、茶乐谷等6个乡村旅游项目建设；抓好康体养生、会展旅游、工业旅游、研学旅行、体育旅游、文化旅游、露营旅游、邮轮旅游等8大类新业态旅游项目。</p>
+    <p>旅游商品琳琅满目。日照有驰名中外的乌鱼蛋、乌鱼干、文蛤、西施舌、对虾、海米等海鲜珍品；有黑陶、农民画、地毯、石雕、根雕等艺术品；有在国际市场上倍受青睐的抽纱、刺绣、工艺屏风等；日照绿茶正走出国门，展翅欲飞。</p>
+    <p>在日照，您可以尽情享受温带海滨度假旅游、水上运动之都体育游、五莲山生态宗教游、莒国福寿文化游带来的无限乐趣；尽情体验以吃渔家饭、干渔家活、享渔家乐为主要内容的“渔家乐”民俗风情游，品尝过百种的海鲜鱼贝之美味，体验海“3S”（阳光Sunshine—大海Sea—沙滩Sandbeach）休闲情趣；尽情欣赏巨港如龙、松涛似海，欣赏江北最大绿茶基地和毛竹园的壮观和秀美•••••• </p>
+    <p>日照，这座年轻的滨海旅游城市正以蓝天之高远，大海之辽阔，青山之灵秀，绿树之幽雅，热切呼唤着您！正以更加宽广的胸怀，更加优美的环境，更加秀美的景色，更加热诚的服务和更加灿烂的微笑，真诚期待着您！</p>
+  </div>
+
+  <!--美食-->
+  <div class="tese-text card-background-page" *ngIf="enjoyFlg==2">
+      <div *ngFor="let item of foodList" class="food">
+        <img [src]="item.cover_image_url" />
+        <div class="food-cover">
+          <h2>{{item.title}}</h2>
+          <button ion-button small (tap)="foodDetail(item.id)">查看详情 <ion-icon name="arrow-forward"></ion-icon></button>
+        </div>
+      </div>
+  </div>
+  <!--酒店-->
+  <ion-list class="tese-text" *ngIf="enjoyFlg==3" text-center>
+    <ion-grid class="lvxingshe">
+      <ion-row style="background: #51a4df;">
+        <ion-col>星级饭店名录表</ion-col>
+      </ion-row>
+      <ion-row style="background: #daeaf8;">
+        <ion-col>酒店名</ion-col>
+        <ion-col col-2>电话</ion-col>
+        <ion-col>客房</ion-col>
+        <ion-col>床位</ion-col>
+        <ion-col>地址</ion-col>
+        <ion-col>星级</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let item of jiudian">
+        <ion-col>{{item.name}}</ion-col>
+        <ion-col col-2>{{item.telephone}}</ion-col>
+        <ion-col>{{item.mobphone}}</ion-col>
+        <ion-col>{{item.chuanzhen}}</ion-col>
+        <ion-col>{{item.address}}</ion-col>
+        <ion-col>{{item.jixing}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+  <!--旅行社-->
+  <ion-list class="tese-text" *ngIf="enjoyFlg==4" text-center>
+    <ion-grid class="lvxingshe">
+      <ion-row style="background: #51a4df;">
+        <ion-col>日照旅行社通讯录</ion-col>
+      </ion-row>
+      <ion-row style="background: #daeaf8;">
+        <ion-col col-2>单位名</ion-col>
+        <ion-col col-2>经理</ion-col>
+        <ion-col>电话</ion-col>
+        <ion-col col-3>手机</ion-col>
+        <ion-col>地址</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let item of lvxingshe">
+        <ion-col col-2>{{item.name}}</ion-col>
+        <ion-col col-2>{{item.person}}</ion-col>
+        <ion-col>{{item.telephone}}</ion-col>
+        <ion-col col-3>{{item.mobphone}}</ion-col>
+        <ion-col>{{item.address}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+  <!--特色商品-->
+  <div class="tese-text" *ngIf="enjoyFlg==5">
+    <ion-list>
+      <ion-item *ngFor="let item of teseList" (tap)="foodDetail(item.id)">
+        <ion-thumbnail item-start>
+          <img [src]="item.cover_image_url" />
+        </ion-thumbnail>
+        <h3 text-wrap>{{item.title}}</h3>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <button navPop class="goback">
+    <ion-icon name="arrow-round-back"></ion-icon>
+  </button>
+</ion-content>
+
+
+

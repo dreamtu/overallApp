@@ -1,0 +1,18 @@
+
+<ion-content>
+  <!--景点-->
+  <div class="tourist0">
+    <div *ngFor="let item of touristList" class="jingdian">
+      <img [src]="item.cover_image_url" />
+      <div class="jingdian-cover">
+        <h2>{{item.title}}</h2>
+        <p (tap)="overallPage(item.title,item.overall_url)">看全景</p>
+        <button ion-button small (tap)="touristDetail(item.id)">查看详情     <ion-icon name="arrow-forward"></ion-icon></button>
+      </div>
+    </div>
+  </div>
+
+  <button navPop class="goback">
+    <ion-icon name="arrow-round-back"></ion-icon>
+  </button>
+</ion-content>
